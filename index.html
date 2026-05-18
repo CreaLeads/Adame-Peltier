@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADAME — Sol Époxy & Moquette de Pierre | Tremblay-en-France | Île-de-France</title>
+  <meta name="description" content="Artisan spécialisé sol époxy et moquette de pierre. Intervention sous 15 jours, garantie biennale, devis gratuit. 93, 75, 95, 60, 77 et Île-de-France." />
+  <meta name="theme-color" content="#2C4A6E" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ADAME — Sol Époxy & Moquette de Pierre | Île-de-France" />
+  <meta property="og:description" content="Artisan certifié spécialisé sol époxy et moquette de pierre. Intervention sous 15 jours, garantie biennale, devis gratuit." />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Favicon SVG (A bleu) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='10' fill='%232C4A6E'/><text x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Sora,Arial,sans-serif' font-weight='700' font-size='38' fill='white'>A</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: #222222;
+      background: #FFFFFF;
+      line-height: 1.6;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    h1, h2, h3, h4 { font-family: 'Sora', system-ui, sans-serif; color: #222222; line-height: 1.2; letter-spacing: -0.01em; }
+
+    :root {
+      --white: #FFFFFF;
+      --gray-light: #F5F5F5;
+      --gray-medium: #E5E5E5;
+      --gray-text: #555555;
+      --dark: #222222;
+      --accent: #2C4A6E;
+      --accent-dark: #1f3550;
+      --accent-light: #3a5d87;
+      --whatsapp: #25D366;
+      --radius: 10px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+      --shadow-lg: 0 16px 40px rgba(0,0,0,0.12);
+      --container: 1200px;
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ============================================
+       BUTTONS
+       ============================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 26px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      white-space: nowrap;
+      text-align: center;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+    }
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(44, 74, 110, 0.3);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--accent);
+    }
+    .btn-outline-dark {
+      background: transparent;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+    }
+    .btn-outline-dark:hover {
+      background: var(--accent);
+      color: var(--white);
+    }
+    .btn-full { width: 100%; padding: 16px 26px; font-size: 16px; }
+
+    /* ============================================
+       HEADER
+       ============================================ */
+    .header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 18px 0;
+      background: transparent;
+      transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+    }
+    .header.scrolled {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: var(--shadow-sm);
+      padding: 12px 0;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--white);
+      transition: color 0.3s ease;
+    }
+    .header.scrolled .logo { color: var(--dark); }
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      background: var(--accent);
+      color: var(--white);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--white);
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.2s ease;
+      position: relative;
+    }
+    .header.scrolled .nav-links a { color: var(--dark); }
+    .nav-links a:hover { color: var(--accent-light); }
+    .header.scrolled .nav-links a:hover { color: var(--accent); }
+
+    .burger {
+      display: none;
+      width: 40px;
+      height: 40px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+    .burger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: all 0.3s ease;
+    }
+    .header.scrolled .burger span { background: var(--dark); }
+    .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ============================================
+       HERO
+       ============================================ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--white);
+      padding: 120px 0 80px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(20, 30, 50, 0.85) 0%, rgba(44, 74, 110, 0.85) 100%),
+        radial-gradient(circle at 20% 20%, #3a5d87 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, #1f3550 0%, transparent 50%),
+        linear-gradient(180deg, #1a2740 0%, #0f1828 100%);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 2px, transparent 2px, transparent 8px);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 880px;
+      padding: 0 24px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 28px;
+      backdrop-filter: blur(8px);
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      margin-bottom: 22px;
+      color: var(--white);
+    }
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ============================================
+       STATS
+       ============================================ */
+    .stats {
+      background: var(--gray-light);
+      padding: 70px 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+    .stat {
+      text-align: center;
+      padding: 20px;
+    }
+    .stat-number {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .stat-label {
+      color: var(--gray-text);
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    /* ============================================
+       SECTIONS GENERAL
+       ============================================ */
+    section { scroll-margin-top: 80px; }
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+    .section-eyebrow {
+      display: inline-block;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .section-subtitle {
+      color: var(--gray-text);
+      font-size: 17px;
+    }
+
+    .services, .why, .realisations, .zone, .testimonials, .contact {
+      padding: 90px 0;
+    }
+    .why, .testimonials { background: var(--white); }
+    .realisations, .contact { background: var(--gray-light); }
+
+    /* ============================================
+       SERVICES
+       ============================================ */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--gray-medium);
+      border-radius: var(--radius-lg);
+      padding: 36px 30px;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+    .service-card.featured {
+      border-color: var(--accent);
+      border-width: 2px;
+    }
+    .service-badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--accent);
+      color: var(--white);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(44, 74, 110, 0.1);
+      color: var(--accent);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+    }
+    .service-icon svg { width: 28px; height: 28px; }
+    .service-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+    .service-card p {
+      color: var(--gray-text);
+      margin-bottom: 18px;
+      font-size: 15px;
+    }
+    .service-features {
+      list-style: none;
+      margin-bottom: 26px;
+    }
+    .service-features li {
+      padding: 6px 0 6px 26px;
+      position: relative;
+      font-size: 14.5px;
+      color: var(--dark);
+    }
+    .service-features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .service-card .btn { margin-top: auto; }
+
+    /* ============================================
+       WHY
+       ============================================ */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+    .why-item {
+      text-align: center;
+      padding: 20px 10px;
+    }
+    .why-icon {
+      font-size: 38px;
+      margin-bottom: 18px;
+      display: inline-block;
+    }
+    .why-item h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+    .why-item p {
+      color: var(--gray-text);
+      font-size: 14.5px;
+    }
+
+    /* ============================================
+       REALISATIONS
+       ============================================ */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .gallery-item {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      cursor: pointer;
+      background: linear-gradient(135deg, #c4c8d0 0%, #8b94a3 100%);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .gallery-item:nth-child(2) { background: linear-gradient(135deg, #a8b2bf 0%, #6d7889 100%); }
+    .gallery-item:nth-child(3) { background: linear-gradient(135deg, #b5bcc8 0%, #7d8696 100%); }
+    .gallery-item:nth-child(4) { background: linear-gradient(135deg, #9aa3b2 0%, #5e6878 100%); }
+    .gallery-item:nth-child(5) { background: linear-gradient(135deg, #c0c5cf 0%, #828c9c 100%); }
+    .gallery-item:nth-child(6) { background: linear-gradient(135deg, #aab2c0 0%, #6a7484 100%); }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+      box-shadow: var(--shadow-lg);
+    }
+    .gallery-label {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255, 255, 255, 0.85);
+      font-family: 'Sora', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      text-align: center;
+      padding: 20px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(44, 74, 110, 0.92) 100%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay span {
+      color: var(--white);
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    /* ============================================
+       ZONE
+       ============================================ */
+    .zone-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+    .zone-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .zone-pill {
+      background: var(--white);
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14.5px;
+      transition: all 0.25s ease;
+    }
+    .zone-pill:hover {
+      background: var(--accent);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+    .zone-cta {
+      background: var(--accent);
+      color: var(--white);
+      padding: 36px 30px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+    .zone-cta h3 {
+      color: var(--white);
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+    .zone-cta p {
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 24px;
+      font-size: 15px;
+    }
+    .zone-cta .btn {
+      background: var(--white);
+      color: var(--accent);
+    }
+    .zone-cta .btn:hover {
+      background: var(--gray-light);
+    }
+    .zone-text {
+      color: var(--gray-text);
+      font-size: 16px;
+    }
+
+    /* ============================================
+       TESTIMONIALS
+       ============================================ */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testimonial {
+      background: var(--white);
+      border: 1px solid var(--gray-medium);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .testimonial:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .stars {
+      color: #f5b400;
+      font-size: 16px;
+      margin-bottom: 18px;
+      letter-spacing: 2px;
+    }
+    .testimonial-text {
+      font-size: 16px;
+      color: var(--dark);
+      margin-bottom: 22px;
+      font-style: italic;
+      line-height: 1.6;
+    }
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 14.5px;
+    }
+    .testimonial-meta {
+      color: var(--gray-text);
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    /* ============================================
+       CONTACT
+       ============================================ */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .contact-form {
+      background: var(--white);
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--gray-medium);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 15px;
+      color: var(--dark);
+      background: var(--white);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(44, 74, 110, 0.12);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+      font-family: inherit;
+    }
+    .radio-group {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .radio-option {
+      flex: 1;
+      min-width: 140px;
+      position: relative;
+    }
+    .radio-option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .radio-option label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border: 1.5px solid var(--gray-medium);
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin: 0;
+      font-size: 14.5px;
+    }
+    .radio-option input:checked + label {
+      border-color: var(--accent);
+      background: rgba(44, 74, 110, 0.06);
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .form-note {
+      text-align: center;
+      color: var(--gray-text);
+      font-size: 14px;
+      margin-top: 14px;
+    }
+    .form-success {
+      display: none;
+      background: rgba(46, 160, 67, 0.1);
+      border: 1.5px solid #2ea043;
+      color: #1a6e2e;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 600;
+      margin-top: 16px;
+    }
+    .form-success.show { display: block; }
+
+    .contact-info {
+      background: var(--accent);
+      color: var(--white);
+      padding: 40px 34px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+    .contact-info h3 {
+      color: var(--white);
+      font-size: 22px;
+      margin-bottom: 24px;
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 22px;
+      font-size: 15.5px;
+    }
+    .contact-info-item:last-child { margin-bottom: 0; }
+    .contact-info-item .ico {
+      font-size: 20px;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 2px;
+    }
+    .contact-info-item a {
+      color: var(--white);
+      font-weight: 600;
+      transition: opacity 0.2s ease;
+    }
+    .contact-info-item a:hover { opacity: 0.85; }
+    .contact-info-item small {
+      display: block;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 13px;
+      font-weight: 400;
+      margin-top: 2px;
+    }
+    .contact-info-divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.2);
+      margin: 24px 0;
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .footer {
+      background: var(--dark);
+      color: rgba(255, 255, 255, 0.75);
+      padding: 60px 0 24px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer .logo { color: var(--white); margin-bottom: 16px; }
+    .footer-tagline {
+      font-size: 14.5px;
+      line-height: 1.7;
+      max-width: 320px;
+    }
+    .footer h4 {
+      color: var(--white);
+      font-size: 15px;
+      margin-bottom: 16px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 14.5px;
+      transition: color 0.2s ease;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .footer-social a {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      transition: background 0.2s ease;
+    }
+    .footer-social a:hover { background: var(--accent); }
+    .footer-social svg { width: 18px; height: 18px; }
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13.5px;
+    }
+
+    /* ============================================
+       WHATSAPP FLOAT
+       ============================================ */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 60px;
+      height: 60px;
+      background: var(--whatsapp);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      z-index: 90;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 28px rgba(37, 211, 102, 0.55);
+    }
+    .whatsapp-float svg { width: 32px; height: 32px; fill: var(--white); }
+    .whatsapp-float::after {
+      content: "";
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 2px solid var(--whatsapp);
+      opacity: 0.7;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.4); opacity: 0; }
+    }
+
+    /* ============================================
+       SCROLL ANIMATIONS
+       ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================
+       RESPONSIVE — TABLET
+       ============================================ */
+    @media (max-width: 1024px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+      .services-grid { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; }
+      .why-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .zone-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ============================================
+       RESPONSIVE — MOBILE
+       ============================================ */
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+
+      .burger { display: flex; }
+      .nav-links {
+        position: fixed;
+        top: 0; right: 0;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        justify-content: center;
+        gap: 28px;
+        padding: 40px;
+        box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+        transform: translateX(100%);
+        transition: transform 0.35s ease;
+      }
+      .nav-links.open { transform: translateX(0); }
+      .nav-links a { color: var(--dark) !important; font-size: 18px; }
+      .nav .btn { display: none; }
+      .nav-links .btn-mobile {
+        display: inline-flex;
+        background: var(--accent);
+        color: var(--white);
+        padding: 14px 24px;
+        border-radius: var(--radius);
+        font-weight: 600;
+        margin-top: 10px;
+      }
+
+      .hero { min-height: 92vh; padding: 100px 0 60px; }
+      .hero-ctas { flex-direction: column; align-items: stretch; }
+      .hero-ctas .btn { width: 100%; }
+
+      .stats { padding: 50px 0; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+
+      .services, .why, .realisations, .zone, .testimonials, .contact { padding: 70px 0; }
+      .section-header { margin-bottom: 40px; }
+
+      .why-grid { grid-template-columns: 1fr; gap: 28px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .gallery-label { font-size: 13px; }
+
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 28px 22px; }
+      .contact-info { padding: 30px 24px; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      .footer-bottom { justify-content: center; text-align: center; }
+
+      .whatsapp-float { width: 54px; height: 54px; bottom: 18px; right: 18px; }
+      .whatsapp-float svg { width: 28px; height: 28px; }
+    }
+
+    /* Hide mobile-only button on desktop */
+    .btn-mobile { display: none; }
+
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================
+       HEADER
+       ============================================ -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="ADAME — Accueil">
+        <span class="logo-mark">A</span>
+        <span>ADAME</span>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#realisations">Réalisations</a></li>
+          <li><a href="#zone">Zone</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact" class="btn-mobile">Devis gratuit</a></li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Devis gratuit</a>
+        <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <section class="hero" id="accueil">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>⭐</span>
+        <span>Artisan local · 50 km autour de Tremblay-en-France</span>
+      </div>
+      <h1>Sols époxy &amp; moquette de pierre — Artisan certifié Île-de-France</h1>
+      <p class="hero-subtitle">Intervention sous 15 jours · Garantie biennale · Devis gratuit</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Demander un devis</a>
+        <a href="#realisations" class="btn btn-outline">Voir nos réalisations</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       STATS
+       ============================================ -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat reveal">
+          <div class="stat-number" data-target="15" data-suffix=" jours">0</div>
+          <div class="stat-label">Délai d'intervention</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-number" data-target="2" data-suffix=" ans">0</div>
+          <div class="stat-label">Garantie biennale</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-number" data-target="50" data-suffix=" km">0</div>
+          <div class="stat-label">Zone couverte</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-number" data-static="Gratuit">Gratuit</div>
+          <div class="stat-label">Devis sans engagement</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SERVICES
+       ============================================ -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Nos prestations</span>
+        <h2 class="section-title">Nos services</h2>
+        <p class="section-subtitle">Trois savoir-faire complémentaires pour transformer vos sols et vos espaces, avec la même exigence de qualité.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- Service 1 — Époxy -->
+        <article class="service-card featured reveal">
+          <div class="service-badge">⭐ Le plus demandé</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12h18M3 6h18M3 18h18"/>
+              <path d="M7 3v18M17 3v18"/>
+            </svg>
+          </div>
+          <h3>Sol Époxy</h3>
+          <p>Revêtement haute performance, ultra-résistant et esthétique. Idéal pour particuliers et professionnels.</p>
+          <ul class="service-features">
+            <li>Résidentiel &amp; commercial</li>
+            <li>Garages &amp; parkings</li>
+            <li>Effet décoratif sur-mesure</li>
+            <li>Durabilité longue durée</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline-dark">En savoir plus</a>
+        </article>
+
+        <!-- Service 2 — Moquette de pierre -->
+        <article class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="6" cy="8" r="2"/>
+              <circle cx="12" cy="14" r="2.5"/>
+              <circle cx="18" cy="9" r="1.8"/>
+              <circle cx="9" cy="18" r="1.5"/>
+              <circle cx="17" cy="17" r="2"/>
+              <circle cx="14" cy="6" r="1.2"/>
+            </svg>
+          </div>
+          <h3>Moquette de Pierre</h3>
+          <p>Revêtement minéral naturel composé de granulats de marbre, pour une esthétique unique et durable.</p>
+          <ul class="service-features">
+            <li>Aspect naturel haut de gamme</li>
+            <li>Résistant aux intempéries</li>
+            <li>Intérieur &amp; extérieur</li>
+            <li>Rendu unique sur-mesure</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline-dark">En savoir plus</a>
+        </article>
+
+        <!-- Service 3 — Agencement -->
+        <article class="service-card reveal">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-6 9 6v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <h3>Agencement Intérieur</h3>
+          <p>Aménagement et finitions sur-mesure pour valoriser vos espaces, en cohérence avec vos revêtements.</p>
+          <ul class="service-features">
+            <li>Conseil &amp; conception</li>
+            <li>Finitions soignées</li>
+            <li>Travaux coordonnés</li>
+            <li>Résultat clé en main</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline-dark">En savoir plus</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       WHY ADAME
+       ============================================ -->
+  <section class="why">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Nos engagements</span>
+        <h2 class="section-title">Pourquoi choisir ADAME ?</h2>
+        <p class="section-subtitle">Un artisan disponible, réactif et engagé sur la qualité — du premier appel au rendu final.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-item reveal">
+          <div class="why-icon">🕐</div>
+          <h3>Réactivité</h3>
+          <p>Réponse sous 24h et intervention planifiée sous 15 jours.</p>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-icon">🛡️</div>
+          <h3>Garantie biennale</h3>
+          <p>Garantie biennale incluse sur l'ensemble de nos travaux.</p>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-icon">📍</div>
+          <h3>Artisan local</h3>
+          <p>Basé à Tremblay-en-France, nous intervenons dans le 93, 75, 95, 60, 77…</p>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-icon">💬</div>
+          <h3>Accompagnement</h3>
+          <p>De la visite technique au rendu final, on reste disponibles à chaque étape.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       RÉALISATIONS
+       ============================================ -->
+  <section class="realisations" id="realisations">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Galerie</span>
+        <h2 class="section-title">Nos réalisations</h2>
+        <p class="section-subtitle">Quelques chantiers récents : sols époxy résidentiels, moquette de pierre et applications professionnelles.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal">
+          <div class="gallery-label">Photo chantier · Époxy résidentiel</div>
+          <div class="gallery-overlay"><span>Époxy résidentiel</span></div>
+        </div>
+        <div class="gallery-item reveal">
+          <div class="gallery-label">Photo chantier · Moquette de pierre bureau</div>
+          <div class="gallery-overlay"><span>Moquette de pierre bureau</span></div>
+        </div>
+        <div class="gallery-item reveal">
+          <div class="gallery-label">Photo chantier · Époxy garage</div>
+          <div class="gallery-overlay"><span>Époxy garage</span></div>
+        </div>
+        <div class="gallery-item reveal">
+          <div class="gallery-label">Photo chantier · Époxy parking</div>
+          <div class="gallery-overlay"><span>Époxy parking</span></div>
+        </div>
+        <div class="gallery-item reveal">
+          <div class="gallery-label">Photo chantier · Moquette de pierre entrée</div>
+          <div class="gallery-overlay"><span>Moquette de pierre entrée</span></div>
+        </div>
+        <div class="gallery-item reveal">
+          <div class="gallery-label">Photo chantier · Époxy commercial</div>
+          <div class="gallery-overlay"><span>Époxy commercial</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ZONE D'INTERVENTION
+       ============================================ -->
+  <section class="zone" id="zone">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Où nous intervenons</span>
+        <h2 class="section-title">Zone d'intervention</h2>
+        <p class="section-subtitle">50 km autour de Tremblay-en-France</p>
+      </div>
+
+      <div class="zone-grid">
+        <div class="reveal">
+          <p class="zone-text">Nous intervenons dans toute l'Île-de-France et les départements limitrophes. Voici les départements que nous couvrons :</p>
+          <div class="zone-pills">
+            <span class="zone-pill">75 — Paris</span>
+            <span class="zone-pill">93 — Seine-Saint-Denis</span>
+            <span class="zone-pill">95 — Val-d'Oise</span>
+            <span class="zone-pill">60 — Oise</span>
+            <span class="zone-pill">77 — Seine-et-Marne</span>
+            <span class="zone-pill">02 — Aisne</span>
+            <span class="zone-pill">80 — Somme</span>
+          </div>
+        </div>
+        <div class="zone-cta reveal">
+          <h3>Vous n'êtes pas sûr ?</h3>
+          <p>Contactez-nous, on se déplace pour estimer votre projet — devis gratuit et sans engagement.</p>
+          <a href="#contact" class="btn">Demander un devis</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TESTIMONIALS
+       ============================================ -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Témoignages</span>
+        <h2 class="section-title">Ils nous font confiance</h2>
+        <p class="section-subtitle">Particuliers et professionnels partagent leur expérience avec ADAME.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <article class="testimonial reveal">
+          <div class="stars" aria-label="5 sur 5">★★★★★</div>
+          <p class="testimonial-text">« Denis est intervenu en 10 jours chrono. Résultat impeccable. »</p>
+          <div class="testimonial-author">Marie T.</div>
+          <div class="testimonial-meta">Particulier · 93</div>
+        </article>
+
+        <article class="testimonial reveal">
+          <div class="stars" aria-label="5 sur 5">★★★★★</div>
+          <p class="testimonial-text">« Sol époxy pour notre entrepôt 300 m². Sérieux et rapide. »</p>
+          <div class="testimonial-author">Entreprise Logistique</div>
+          <div class="testimonial-meta">Professionnel · 95</div>
+        </article>
+
+        <article class="testimonial reveal">
+          <div class="stars" aria-label="5 sur 5">★★★★★</div>
+          <p class="testimonial-text">« Moquette de pierre dans notre hall d'entrée. Magnifique. »</p>
+          <div class="testimonial-author">M. Bernard</div>
+          <div class="testimonial-meta">Particulier · Paris 75</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CONTACT FORM
+       ============================================ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Contact</span>
+        <h2 class="section-title">Demandez votre devis gratuit</h2>
+        <p class="section-subtitle">Réponse sous 24h · Déplacement gratuit</p>
+      </div>
+
+      <div class="contact-grid">
+        <form class="contact-form reveal" id="devisForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstname">Prénom *</label>
+              <input type="text" id="firstname" name="firstname" required autocomplete="given-name" />
+            </div>
+            <div class="form-group">
+              <label for="lastname">Nom *</label>
+              <input type="text" id="lastname" name="lastname" required autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Téléphone *</label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="06 XX XX XX XX" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="vous@email.fr" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="project">Type de projet *</label>
+            <select id="project" name="project" required>
+              <option value="">— Sélectionnez —</option>
+              <option value="epoxy">Sol époxy</option>
+              <option value="moquette">Moquette de pierre</option>
+              <option value="agencement">Agencement</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Type de client *</label>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input type="radio" id="client-particulier" name="client" value="particulier" required />
+                <label for="client-particulier">Particulier</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="client-pro" name="client" value="professionnel" />
+                <label for="client-pro">Professionnel</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="surface">Surface approximative</label>
+              <input type="text" id="surface" name="surface" placeholder="Ex : 80 m²" />
+            </div>
+            <div class="form-group">
+              <label for="postal">Code postal *</label>
+              <input type="text" id="postal" name="postal" required pattern="[0-9]{5}" maxlength="5" placeholder="93290" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message / description</label>
+            <textarea id="message" name="message" placeholder="Décrivez votre projet, vos besoins, vos contraintes…"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">Envoyer ma demande</button>
+          <p class="form-note">✓ Gratuit et sans engagement · Réponse sous 24h</p>
+
+          <div class="form-success" id="formSuccess">
+            ✓ Merci ! Denis vous rappelle sous 24h.
+          </div>
+        </form>
+
+        <aside class="contact-info reveal">
+          <h3>Contact direct</h3>
+          <div class="contact-info-item">
+            <span class="ico">📞</span>
+            <div>
+              <a href="tel:+33671403664">06 71 40 36 64</a>
+              <small>Appelez Denis directement</small>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="ico">✉️</span>
+            <div>
+              <a href="mailto:denis.peltier@hotmail.fr">denis.peltier@hotmail.fr</a>
+              <small>Réponse rapide</small>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="ico">📍</span>
+            <div>
+              Tremblay-en-France (93)
+              <small>50 km autour</small>
+            </div>
+          </div>
+          <div class="contact-info-divider"></div>
+          <div class="contact-info-item">
+            <span class="ico">🕐</span>
+            <div>
+              Horaires
+              <small>Lun–Sam · 8h–19h</small>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#" class="logo">
+            <span class="logo-mark">A</span>
+            <span>ADAME</span>
+          </a>
+          <p class="footer-tagline">
+            Artisan spécialisé sol époxy et moquette de pierre en Île-de-France.<br>
+            Garantie biennale · Artisan local · Devis gratuit.
+          </p>
+        </div>
+
+        <div>
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#realisations">Réalisations</a></li>
+            <li><a href="#zone">Zone</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+33671403664">06 71 40 36 64</a></li>
+            <li><a href="mailto:denis.peltier@hotmail.fr">denis.peltier@hotmail.fr</a></li>
+            <li>Tremblay-en-France (93)</li>
+          </ul>
+          <div class="footer-social" aria-label="Réseaux sociaux">
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 ADAME — Tous droits réservés</div>
+        <div>Garantie biennale · Artisan local · Devis gratuit</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       WHATSAPP FLOAT
+       ============================================ -->
+  <a href="https://wa.me/33671403664" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contacter sur WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.464 3.488"/></svg>
+  </a>
+
+  <script>
+    /* ============================================
+       HEADER SCROLL EFFECT
+       ============================================ */
+    const header = document.getElementById('header');
+    const onScroll = () => {
+      if (window.scrollY > 40) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* ============================================
+       BURGER MENU
+       ============================================ */
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open);
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* ============================================
+       REVEAL ON SCROLL
+       ============================================ */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ============================================
+       ANIMATED COUNTERS
+       ============================================ */
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        if (el.dataset.animated) return;
+        el.dataset.animated = '1';
+
+        if (el.dataset.static) {
+          el.textContent = el.dataset.static;
+          counterObserver.unobserve(el);
+          return;
+        }
+
+        const target = parseInt(el.dataset.target, 10);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1400;
+        const start = performance.now();
+        const step = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = Math.round(target * eased);
+          el.textContent = value + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+          else el.textContent = target + suffix;
+        };
+        requestAnimationFrame(step);
+        counterObserver.unobserve(el);
+      });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll('.stat-number').forEach(el => counterObserver.observe(el));
+
+    /* ============================================
+       FORM HANDLING
+       ============================================ */
+    const form = document.getElementById('devisForm');
+    const success = document.getElementById('formSuccess');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      success.classList.add('show');
+      form.querySelector('button[type="submit"]').disabled = true;
+      form.querySelector('button[type="submit"]').textContent = '✓ Demande envoyée';
+      form.reset();
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  </script>
+</body>
+</html>
