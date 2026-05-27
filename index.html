@@ -1511,17 +1511,50 @@
        ============================================ */
     const form = document.getElementById('devisForm');
     const success = document.getElementById('formSuccess');
-    form.addEventListener('submit', (e) => {
+    const WEBHOOK_URL = 'https://hook.eu1.make.com/o8m4ciyxkv97l8brnbvr6pfprnzdqmun';
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
       }
-      success.classList.add('show');
-      form.querySelector('button[type="submit"]').disabled = true;
-      form.querySelector('button[type="submit"]').textContent = '✓ Demande envoyée';
-      form.reset();
-      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalLabel = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Envoi en cours…';
+
+      // Collecte des données du formulaire
+      const formData = new FormData(form);
+      const payload = Object.fromEntries(formData.entries());
+      payload.source = 'site-adame-epoxy.fr';
+      payload.submittedAt = new Date().toISOString();
+
+      try {
+        const response = await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+
+        success.classList.add('show');
+        success.textContent = '✓ Merci ! Denis vous rappelle sous 24h.';
+        submitBtn.textContent = '✓ Demande envoyée';
+        form.reset();
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } catch (err) {
+        console.error('Erreur envoi formulaire :', err);
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+        success.classList.add('show');
+        success.style.background = 'rgba(220, 38, 38, 0.1)';
+        success.style.borderColor = '#dc2626';
+        success.style.color = '#991b1b';
+        success.textContent = "⚠ Erreur d'envoi. Appelez Denis directement au 06 71 40 36 64.";
+      }
     });
   </script>
 </body>
