@@ -322,11 +322,12 @@
       font-size: 17px;
     }
 
-    .services, .why, .realisations, .zone, .testimonials, .contact {
+    .services, .why, .realisations, .zone, .testimonials, .partner, .contact {
       padding: 90px 0;
     }
-    .why, .testimonials { background: var(--white); }
+    .why, .testimonials, .partner { background: var(--white); }
     .realisations, .contact { background: var(--gray-light); }
+    .partner { background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%); }
 
     /* ============================================
        SERVICES
@@ -497,6 +498,10 @@
       font-weight: 700;
       font-size: 18px;
     }
+    .gallery-cta {
+      text-align: center;
+      margin-top: 50px;
+    }
 
     /* ============================================
        ZONE
@@ -507,11 +512,22 @@
       gap: 50px;
       align-items: start;
     }
+    .zone-region {
+      margin-bottom: 28px;
+    }
+    .zone-region-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.01em;
+    }
     .zone-pills {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
+      gap: 10px;
+      margin-top: 4px;
     }
     .zone-pill {
       background: var(--white);
@@ -598,6 +614,103 @@
       color: var(--gray-text);
       font-size: 13px;
       margin-top: 2px;
+    }
+
+    /* ============================================
+       PARTNER
+       ============================================ */
+    .partner-card {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 0;
+      background: var(--white);
+      border: 1px solid var(--gray-medium);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .partner-visual {
+      position: relative;
+      min-height: 380px;
+      background: linear-gradient(135deg, #2C4A6E 0%, #1f3550 100%);
+    }
+    .partner-visual img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .partner-visual-fallback {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      text-align: center;
+      gap: 6px;
+      grid-auto-rows: max-content;
+      align-content: center;
+    }
+    .partner-fallback-mark {
+      font-family: 'Sora', sans-serif;
+      font-size: 64px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+    .partner-fallback-sub {
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+    .partner-content {
+      padding: 44px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .partner-logo {
+      max-height: 60px;
+      width: auto;
+      object-fit: contain;
+      align-self: flex-start;
+      margin-bottom: 4px;
+    }
+    .partner-content h3 {
+      font-size: 24px;
+      color: var(--accent);
+      margin: 0;
+    }
+    .partner-content p {
+      color: var(--gray-text);
+      font-size: 15.5px;
+      margin: 0;
+    }
+    .partner-features {
+      list-style: none;
+      padding: 0;
+      margin: 4px 0 8px;
+      display: grid;
+      gap: 8px;
+    }
+    .partner-features li {
+      padding-left: 26px;
+      position: relative;
+      font-size: 14.5px;
+      color: var(--dark);
+    }
+    .partner-features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .partner-content .btn {
+      align-self: flex-start;
+      margin-top: 6px;
     }
 
     /* ============================================
@@ -877,6 +990,8 @@
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
       .zone-grid { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; }
+      .partner-card { grid-template-columns: 1fr; }
+      .partner-visual { min-height: 240px; }
       .contact-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
@@ -923,7 +1038,7 @@
       .stats { padding: 50px 0; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
 
-      .services, .why, .realisations, .zone, .testimonials, .contact { padding: 70px 0; }
+      .services, .why, .realisations, .zone, .testimonials, .partner, .contact { padding: 70px 0; }
       .section-header { margin-bottom: 40px; }
 
       .why-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -966,7 +1081,7 @@
         <ul class="nav-links" id="navLinks">
           <li><a href="#accueil">Accueil</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#realisations">Réalisations</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
           <li><a href="#zone">Zone</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="#contact" class="btn-mobile">Devis gratuit</a></li>
@@ -1175,6 +1290,10 @@
           <div class="gallery-overlay"><span>Époxy commercial — hall pro</span></div>
         </div>
       </div>
+
+      <div class="gallery-cta reveal">
+        <a href="realisations.html" class="btn btn-primary">Voir toutes nos réalisations →</a>
+      </div>
     </div>
   </section>
 
@@ -1186,20 +1305,47 @@
       <div class="section-header reveal">
         <span class="section-eyebrow">Où nous intervenons</span>
         <h2 class="section-title">Zone d'intervention</h2>
-        <p class="section-subtitle">50 km autour de Tremblay-en-France</p>
+        <p class="section-subtitle">Île-de-France · Hauts-de-France · Normandie</p>
       </div>
 
       <div class="zone-grid">
         <div class="reveal">
-          <p class="zone-text">Nous intervenons dans toute l'Île-de-France et les départements limitrophes. Voici les départements que nous couvrons :</p>
-          <div class="zone-pills">
-            <span class="zone-pill">75 — Paris</span>
-            <span class="zone-pill">93 — Seine-Saint-Denis</span>
-            <span class="zone-pill">95 — Val-d'Oise</span>
-            <span class="zone-pill">60 — Oise</span>
-            <span class="zone-pill">77 — Seine-et-Marne</span>
-            <span class="zone-pill">02 — Aisne</span>
-            <span class="zone-pill">80 — Somme</span>
+          <p class="zone-text">Basés à Tremblay-en-France, nous intervenons dans 3 grandes régions du Nord-Ouest de la France :</p>
+
+          <div class="zone-region">
+            <h4 class="zone-region-title">🇫🇷 Île-de-France</h4>
+            <div class="zone-pills">
+              <span class="zone-pill">75 — Paris</span>
+              <span class="zone-pill">77 — Seine-et-Marne</span>
+              <span class="zone-pill">78 — Yvelines</span>
+              <span class="zone-pill">91 — Essonne</span>
+              <span class="zone-pill">92 — Hauts-de-Seine</span>
+              <span class="zone-pill">93 — Seine-Saint-Denis</span>
+              <span class="zone-pill">94 — Val-de-Marne</span>
+              <span class="zone-pill">95 — Val-d'Oise</span>
+            </div>
+          </div>
+
+          <div class="zone-region">
+            <h4 class="zone-region-title">🌾 Hauts-de-France</h4>
+            <div class="zone-pills">
+              <span class="zone-pill">02 — Aisne</span>
+              <span class="zone-pill">59 — Nord</span>
+              <span class="zone-pill">60 — Oise</span>
+              <span class="zone-pill">62 — Pas-de-Calais</span>
+              <span class="zone-pill">80 — Somme</span>
+            </div>
+          </div>
+
+          <div class="zone-region">
+            <h4 class="zone-region-title">🌊 Normandie</h4>
+            <div class="zone-pills">
+              <span class="zone-pill">14 — Calvados</span>
+              <span class="zone-pill">27 — Eure</span>
+              <span class="zone-pill">50 — Manche</span>
+              <span class="zone-pill">61 — Orne</span>
+              <span class="zone-pill">76 — Seine-Maritime</span>
+            </div>
           </div>
         </div>
         <div class="zone-cta reveal">
@@ -1243,6 +1389,43 @@
           <div class="testimonial-author">M. Bernard</div>
           <div class="testimonial-meta">Particulier · Paris 75</div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PARTNER
+       ============================================ -->
+  <section class="partner">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">Notre partenaire</span>
+        <h2 class="section-title">Epoxy Design France</h2>
+        <p class="section-subtitle">Distribution &amp; formation en résine époxy — un partenariat gage d'expertise et de qualité</p>
+      </div>
+
+      <div class="partner-card reveal">
+        <div class="partner-visual">
+          <img src="photos/partner-epoxy-design.jpg" alt="Epoxy Design France — partenaire ADAME" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+          <div class="partner-visual-fallback">
+            <span class="partner-fallback-mark">EDF</span>
+            <span class="partner-fallback-sub">Epoxy Design France</span>
+          </div>
+        </div>
+        <div class="partner-content">
+          <img src="photos/partner-logo.png" alt="Logo Epoxy Design France" class="partner-logo" onerror="this.style.display='none';" />
+          <h3>Une expertise certifiée</h3>
+          <p>ADAME est partenaire d'<strong>Epoxy Design France</strong>, acteur référent dans la <strong>distribution et la formation</strong> de résines époxy en France. Cette collaboration garantit l'utilisation de produits techniques de premier plan et le respect des dernières innovations du secteur.</p>
+          <ul class="partner-features">
+            <li>Produits de résine époxy haut de gamme</li>
+            <li>Formations techniques certifiantes</li>
+            <li>Veille technologique permanente</li>
+            <li>Réseau d'artisans qualifiés</li>
+          </ul>
+          <a href="https://www.epoxydesign.net/" class="btn btn-outline-dark" target="_blank" rel="noopener">
+            Découvrir epoxydesign.net →
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -1389,7 +1572,7 @@
           <ul class="footer-links">
             <li><a href="#accueil">Accueil</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#realisations">Réalisations</a></li>
+            <li><a href="realisations.html">Réalisations</a></li>
             <li><a href="#zone">Zone</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
