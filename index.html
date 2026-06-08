@@ -177,6 +177,17 @@
     .header.scrolled .nav-links a { color: var(--dark); }
     .nav-links a:hover { color: var(--accent-light); }
     .header.scrolled .nav-links a:hover { color: var(--accent); }
+    .nav-ext-icon {
+      display: inline-block;
+      font-size: 12px;
+      margin-left: 2px;
+      opacity: 0.75;
+      transition: transform 0.2s ease;
+    }
+    .nav-partner:hover .nav-ext-icon {
+      transform: translate(2px, -2px);
+      opacity: 1;
+    }
 
     .burger {
       display: none;
@@ -1080,6 +1091,7 @@
           <li><a href="#services">Services</a></li>
           <li><a href="realisations.html">Réalisations</a></li>
           <li><a href="#zone">Zone</a></li>
+          <li><a href="https://www.epoxydesign.net/" target="_blank" rel="noopener" class="nav-partner">Notre partenaire <span class="nav-ext-icon" aria-hidden="true">↗</span></a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="#contact" class="btn-mobile">Devis gratuit</a></li>
         </ul>
@@ -1567,6 +1579,7 @@
             <li><a href="#services">Services</a></li>
             <li><a href="realisations.html">Réalisations</a></li>
             <li><a href="#zone">Zone</a></li>
+            <li><a href="https://www.epoxydesign.net/" target="_blank" rel="noopener">Notre partenaire ↗</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
